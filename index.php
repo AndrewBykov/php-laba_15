@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: black; color: white; font-size: 20px; padding: 40px;">
 
-
+<!------------------- Начало PHP кода -------------------->
 
 <?php
 class Animal {
@@ -19,49 +19,68 @@ class Animal {
 }
 
 class Dog extends Animal {
-    public $bread;
-    public function makeNoise() {
-      echo "Собака говорит.<br>";
-    }
+  public $breed;
   
-    public function eat() {
-      echo "Собака ест " . $this->food . ".<br>";
-    }
-  
-    public function sleep() {
-      echo "Собака спит.<br>";
-    }
+  public function __construct($name, $food, $location, $breed) {
+      parent::__construct($name, $food, $location);
+      $this->breed = $breed;
+  }
+
+  public function makeNoise() {
+      echo "$this->name $this->breed говорит.<br>";
+  }
+
+  public function eat() {
+      echo "$this->name $this->breed ест $this->food.<br>";
+  }
+
+  public function sleep() {
+      echo "$this->name $this->breed спит.<br>";
+  }
 }
 
 class Cat extends Animal {
-    public $bread;
-    public function makeNoise() {
-      echo "Кошка говорит.<br>";
-    }
+  public $breed;
   
-    public function eat() {
-      echo "Кошка ест " . $this->food . ".<br>";
-    }
-  
-    public function sleep() {
-      echo "Кошка спит.<br>";
-    }
+  public function __construct($name, $food, $location, $breed) {
+      parent::__construct($name, $food, $location);
+      $this->breed = $breed;
+  }
+
+  public function makeNoise() {
+      echo "$this->name $this->breed говорит.<br>";
+  }
+
+  public function eat() {
+      echo "$this->name $this->breed ест $this->food.<br>";
+  }
+
+  public function sleep() {
+      echo "$this->name $this->breed спит.<br>";
+  }
 }
 
 class Horse extends Animal {
-    public $bread;
-    public function makeNoise() {
-      echo "Лошадь говорит.<br>";
-    }
+  public $breed;
   
-    public function eat() {
-      echo "Лошадь ест " . $this->food . ".<br>";
-    }
-  
-    public function sleep() {
-      echo "Лошадь спит.<br>";
-    }
+  public function __construct($name, $food, $location, $breed) {
+      parent::__construct($name, $food, $location);
+      $this->breed = $breed;
+  }
+
+  public function makeNoise() {
+      echo "$this->name $this->breed говорит.<br>";
+  }
+
+  public function eat() {
+      echo "$this->name $this->breed ест $this->food.<br>";
+  }
+
+  public function sleep() {
+      echo "$this->name $this->breed спит.<br>";
+  }
 }
+
 
 class Veterinarian {
     public function treatAnimal($animal) {
@@ -72,22 +91,22 @@ class Veterinarian {
   }
   
   // Пример использования
-  $dog = new Dog('Собака', 'кости', 'собачья будка');
-  $dog->bread = 'Мопс';
+  $dog = new Dog('Собака', 'кости', 'собачья будка', 'bread');
   
-  $cat = new Cat('Кошка', 'молоко :)', 'дом');
-  $cat->bread = 'Британская';
+  $cat = new Cat('Кошка', 'молоко :)', 'дом', 'Британская');
   
-  $horse = new Horse('Лошадь', 'сено', 'загон');
-  $horse->bread = 'Арабская';
+  $horse = new Horse('Лошадь', 'сено', 'загон', 'Арабская');
   
   $vet = new Veterinarian();
   $vet->treatAnimal($dog);
+  echo '<br>';
   $vet->treatAnimal($cat);
+  echo '<br>';
   $vet->treatAnimal($horse);
+
 ?>
 
-
+<!------------------- Конец PHP кода -------------------->
 
 
 
